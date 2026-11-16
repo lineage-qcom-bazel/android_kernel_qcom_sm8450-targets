@@ -75,8 +75,31 @@ MOTO_COMMON_MODULES = COMMON_MODULES + [
 # Per Motorola product (--//vendor/qcom/kernel:mmi_product=<product>):
 #   modules: external modules on top of the target's modules
 MOTO_PRODUCTS_PARROT = {
+    "avatrn": {
+        "modules": [
+            "%p/qcom/opensource/synx-kernel-v1:%b_modules",
+            "%p/motorola/drivers/input/misc/goodix_fod_mmi:%b_goodix_fod_mmi",
+            "%p/motorola/drivers/input/touchscreen/focaltech_0flash_v2_mmi:%b_focaltech_0flash_v2_mmi",
+            "%p/motorola/drivers/input/touchscreen/goodix_berlin_mmi:%b_goodix_brl_mmi",
+            "%p/motorola/drivers/misc/sx937x:%b_sx937x_sar",
+            "%p/motorola/drivers/regulator/wl2864c:%b_wl2864c",
+            "%p/st/opensource/driver:%b_stm_nfc_i2c",
+        ],
+    },
+    "genevn": {
+        "modules": [
+            "%p/qcom/opensource/synx-kernel-v1:%b_modules",
+            "%p/motorola/drivers/input/misc/fpc_fps_mmi:%b_fpc1020_mmi",
+            "%p/motorola/drivers/input/touchscreen/nova_0flash_mmi:%b_nova_0flash_mmi",
+            "%p/motorola/drivers/misc/pen:%b_bu520xx_pen",
+            "%p/motorola/drivers/misc/sx937x:%b_sx937x_sar",
+            "%p/motorola/drivers/regulator/wl2864c:%b_wl2864c",
+            "%p/nxp/opensource/driver:%b_nxp-nci",
+        ],
+    },
     "mona": {
         "modules": [
+            "%p/qcom/opensource/synx-kernel:%b_modules",
             "%p/motorola/drivers/input/misc/goodix_fod_mmi:%b_goodix_fod_mmi",
             "%p/motorola/drivers/input/misc/rbs_fod_mmi:%b_rbs_fod_mmi",
             "%p/motorola/drivers/input/touchscreen/goodix_berlin_mmi:%b_goodix_brl_mmi",
@@ -89,6 +112,7 @@ MOTO_PRODUCTS_PARROT = {
     },
     "mumba": {
         "modules": [
+            "%p/qcom/opensource/synx-kernel:%b_modules",
             "%p/motorola/drivers/input/misc/anc_fps_mmi:%b_anc_fps_mmi",
             "%p/motorola/drivers/input/touchscreen/chipone_tddi_v3_mmi:%b_chipone_tddi_v3_mmi",
             "%p/motorola/drivers/input/touchscreen/ilitek_v4_mmi:%b_ilitek_v4_mmi",
@@ -100,6 +124,7 @@ MOTO_PRODUCTS_PARROT = {
     },
     "paros": {
         "modules": [
+            "%p/qcom/opensource/synx-kernel:%b_modules",
             "%p/motorola/drivers/backlight/aw99703:%b_leds_aw99703",
             "%p/motorola/drivers/backlight/ktd3136:%b_ktd3136_bl",
             "%p/motorola/drivers/input/misc/fpc_fps_mmi:%b_fpc1020_mmi",
@@ -124,7 +149,6 @@ moto_kernel_package(
         "%p/qcom/opensource/securemsm-kernel:%b_qcrypto-msm_dlkm",
         "%p/qcom/opensource/securemsm-kernel:%b_qrng_dlkm",
         "%p/qcom/opensource/securemsm-kernel:%b_smmu_proxy_dlkm",
-        "%p/qcom/opensource/synx-kernel:%b_modules",
         "%p/qcom/opensource/wlan/platform:%b_icnss2",
         "%p/qcom/opensource/wlan/qcacld-3.0:%b_qca_cld_adrastea",
         "%p/qcom/opensource/wlan/qcacld-3.0:%b_qca_cld_qca6490",
