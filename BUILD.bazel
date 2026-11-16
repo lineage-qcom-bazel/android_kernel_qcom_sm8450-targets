@@ -8,6 +8,45 @@ package(
     ],
 )
 
+MOTO_MODULES = [
+    "%p/motorola/drivers/misc/utag:%b_utags",
+    "%p/motorola/drivers/mmi_annotate:%b_mmi_annotate",
+    "%p/motorola/drivers/mmi_info:%b_mmi_info",
+    "%p/motorola/drivers/mmi_relay:%b_mmi_relay",
+    "%p/motorola/drivers/misc/mmi_sys_temp:%b_mmi_sys_temp",
+    "%p/motorola/drivers/moto_netopt/con_dfpar:%b_con_dfpar",
+    "%p/motorola/drivers/power/bm_adsp_ulog:%b_bm_adsp_ulog",
+    "%p/motorola/drivers/power/mmi_charger:%b_mmi_charger",
+    "%p/motorola/drivers/power/qpnp_adaptive_charge:%b_qpnp_adaptive_charge",
+    "%p/motorola/drivers/power/qti_glink_charger:%b_qti_glink_charger",
+]
+
+# Per Motorola product (--//vendor/qcom/kernel:mmi_product=<product>):
+#   dtb_wildcard:  merged dtbs that go into dtb.img, default "*"
+#   dtbo_wildcard: merged dtbos that go into dtbo.img, default "*"
+#   modules:       external modules on top of the target's modules
+MOTO_PRODUCTS_PARROT = {
+    "mona": {
+        "dtb_wildcard": "*",
+        "dtbo_wildcard": "*",
+        "modules": MOTO_MODULES + [
+            "%p/motorola/drivers/input/misc/goodix_fod_mmi:%b_goodix_fod_mmi",
+            "%p/motorola/drivers/input/misc/rbs_fod_mmi:%b_rbs_fod_mmi",
+            "%p/motorola/drivers/input/touchscreen/goodix_berlin_mmi:%b_goodix_brl_mmi",
+            "%p/motorola/drivers/input/touchscreen/touchscreen_mmi:%b_touchscreen_mmi",
+            "%p/motorola/drivers/misc/hall:%b_hall_pen",
+            "%p/motorola/drivers/misc/mmi_stow:%b_mmi_stow",
+            "%p/motorola/drivers/misc/sx937x_multi:%b_sx937x_multi",
+            "%p/motorola/drivers/regulator/dio8015:%b_dio8015",
+            "%p/motorola/drivers/sensors:%b_sensors_class",
+            "%p/nxp/opensource/driver:%b_nxp-nci",
+            "%p/st/opensource/driver:%b_stm_nfc_i2c",
+        ],
+    },
+}
+
+MOTO_PRODUCTS_WAIPIO = {}
+
 target_kernel_package(
     msm_target = "parrot",
     variant = "perf",
@@ -58,6 +97,7 @@ target_kernel_package(
         "%p/qcom/opensource/wlan/qcacld-3.0:%b_qca_cld_qca6490",
         "%p/qcom/opensource/wlan/qcacld-3.0:%b_qca_cld_qca6750",
     ],
+    products = MOTO_PRODUCTS_PARROT,
 )
 
 target_kernel_package(
@@ -106,4 +146,5 @@ target_kernel_package(
         "%p/qcom/opensource/wlan/platform:%b_wlan_firmware_service",
         "%p/qcom/opensource/wlan/qcacld-3.0:%b_qca_cld_qca6490",
     ],
+    products = MOTO_PRODUCTS_WAIPIO,
 )
