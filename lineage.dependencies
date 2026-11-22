@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "android_external_dtc",
+    "target_path": "kernel/platform/kernel-6.6/external/dtc"
+  },
+  {
+    "repository": "android_kernel_lineage",
+    "target_path": "kernel/platform/kernel-6.6/lineage"
+  },
+  {
+    "repository": "android_kernel_qcom_sm8750",
+    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/kernel"
+  },
+  {
+    "repository": "android_kernel_qcom_sm8450-modules",
+    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/sm8450-modules"
+  },
+  {
+    "repository": "android_kernel_qcom_sm8450-devicetrees",
+    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/sm8450-devicetrees"
+  }
+]
