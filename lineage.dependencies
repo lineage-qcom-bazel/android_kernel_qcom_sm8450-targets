@@ -8,15 +8,15 @@
     "target_path": "kernel/platform/kernel-6.6/lineage"
   },
   {
-    "repository": "android_kernel_motorola_sm8750",
-    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/kernel"
+    "repository": "android_kernel_motorola_sm6475",
+    "target_path": "kernel/platform/kernel-6.6/vendor/motorola/kernel"
   },
   {
-    "repository": "android_kernel_motorola_sm8450-modules",
-    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/sm8450-modules"
+    "repository": "android_kernel_motorola_sm6475-modules",
+    "target_path": "kernel/platform/kernel-6.6/vendor/motorola/sm6475-modules"
   },
   {
-    "repository": "android_kernel_motorola_sm8450-devicetrees",
-    "target_path": "kernel/platform/kernel-6.6/vendor/qcom/sm8450-devicetrees"
+    "repository": "android_kernel_motorola_sm6475-devicetrees",
+    "target_path": "kernel/platform/kernel-6.6/vendor/motorola/sm6475-devicetrees"
   }
 ]
